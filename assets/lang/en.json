@@ -1,0 +1,32 @@
+{
+  "app_title": "Settings Example",
+  "dark_theme": "Dark Theme",
+  "EnterCityName": "Enter City Name",
+  "CityNotFound": "Oops City Not Found",
+  "NetworkError": "Oops Check your Network",
+  "CityName": "City Name",
+  "EnterCityNameGetWeather": "Enter City Name to get Weather",
+  "Settings": "Settings",
+  "Features": "Features",
+  "AboutApp": "About the App",
+  "AboutAppIntroduction": "This is a simple weather app built with Flutter to showcase the knowledge I gained during my programming lessons..",
+  "AboutApp1": "- Get weather information for any city",
+  "AboutApp2": "- Supports dark mode",
+  "AboutApp3": "- Saves user preferences",
+  "AboutApp4": "- Dynamic weather animations that adapt to current weather conditions",
+  "AboutApp5": "- Smooth transitions between widgets and pages",
+  "AboutApp6": "- Communication with remote service (https://openweathermap.org/api)",
+  "AboutApp7": "-  Supports both Italian and English languages",
+  "Cancel":"Cancel",
+  "Search":"Search",
+  "MoreDetails":"More Details",
+  "DetailedWeather":"Detailed Weather",
+  "Sunrise":"Sunrise",
+  "Sunset":"Sunset",
+  "WindSpeed":"Wind Speed",
+  "Humidity":"Humidity",
+  "language": {
+    "language": "Language",
+    "switched": "Language switched to English"
+  }
+}

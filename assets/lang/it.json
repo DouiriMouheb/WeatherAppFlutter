@@ -1,0 +1,32 @@
+{
+  "app_title": "Ejemplo de Configuración",
+  "dark_theme": "Tema Oscuro",
+  "EnterCityName": "Inserire il nome della città",
+  "CityNotFound": "Oops Città non trovata",
+  "NetworkError": "Oops Controllare la rete",
+  "CityName": "Nome della città",
+  "EnterCityNameGetWeather": "Inserire il nome della città per ottenere il meteo",
+  "Settings": "Impostazioni",
+  "Features": "Funzionalità",
+  "AboutApp": "Informazioni sull'app",
+  "AboutAppIntroduction": "Questa è una semplice app meteo sviluppata con Flutter per mostrare le conoscenze che ho acquisito durante le lezioni di programmazione.",
+  "AboutApp1": "- Ottieni informazioni meteo per qualsiasi città",
+  "AboutApp2": "- Supporta la modalità scura",
+  "AboutApp3": "- Salva le preferenze dell'utente",
+  "AboutApp4": "- Animazioni meteo dinamiche che si adattano alle condizioni meteo attuali",
+  "AboutApp5": "- Transizioni fluide tra widget e pagine",
+  "AboutApp6": "- Comunicazione con un servizio remoto (https://openweathermap.org/api)",
+  "AboutApp7": "- Supporta entrambe le lingue, italiano e inglese",
+  "Cancel":"Annulla",
+  "Search":"Cerca",
+  "MoreDetails":"Maggiori Dettagli",
+  "DetailedWeather":"Meteo Dettagliato",
+  "Sunrise":"Alba",
+  "Sunset":"Tramonto",
+  "WindSpeed":"Velocità del Vento",
+  "Humidity":"Umidità",
+  "language": {
+    "language": "Idioma",
+    "switched": "Lingua cambiata in italiano"
+  }
+}
