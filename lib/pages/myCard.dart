@@ -49,4 +49,3 @@ class MyCard extends StatelessWidget {
     );
   }
 }
-// Helper function to format time

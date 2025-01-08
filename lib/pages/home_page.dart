@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -30,17 +29,16 @@ class _HomeViewState extends State<MyHomePage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(AppLocalizations.of(context)!.translate('EnterCityName')),
-
-          content: TextField(
+        content: TextField(
           controller: _controller,
-          decoration: InputDecoration(hintText: (AppLocalizations.of(context)!.translate('CityName'))),
-          autofocus: true, // Focus the text field automatically
+          decoration: InputDecoration(
+              hintText: (AppLocalizations.of(context)!.translate('CityName'))),
+          autofocus: true,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child:  Text(AppLocalizations.of(context)!.translate('Cancel')),
-
+            child: Text(AppLocalizations.of(context)!.translate('Cancel')),
           ),
           TextButton(
             onPressed: () {
@@ -50,7 +48,7 @@ class _HomeViewState extends State<MyHomePage> {
               fetchWeather();
               Navigator.pop(context);
             },
-            child:  Text(AppLocalizations.of(context)!.translate('Search')),
+            child: Text(AppLocalizations.of(context)!.translate('Search')),
           ),
         ],
       ),
@@ -129,7 +127,6 @@ class _HomeViewState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: AppBar(
-
           centerTitle: true,
           leading: Builder(
             builder: (BuildContext context) {
@@ -139,7 +136,7 @@ class _HomeViewState extends State<MyHomePage> {
               );
             },
           ),
-          elevation: 1, // Remove shadow
+          elevation: 1,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(8.0),
             child: Container(),
@@ -154,53 +151,55 @@ class _HomeViewState extends State<MyHomePage> {
                 color: Colors.blue,
                 child: Center(
                   child: Text(
-                      (AppLocalizations.of(context)!.translate('Settings')),
-                   // t.Settings,
+                    (AppLocalizations.of(context)!.translate('Settings')),
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                 ),
               ),
-          Column(
-            children: [
-              DropdownButton<String>(
-                value: settingsProvider.settings.language,
-                items: [
-                  DropdownMenuItem(
-                    value: 'en',
-                    child: Text(AppLocalizations.of(context)!.translate('English')),
+              Column(
+                children: [
+                  DropdownButton<String>(
+                    value: settingsProvider.settings.language,
+                    items: [
+                      DropdownMenuItem(
+                        value: 'en',
+                        child: Text(
+                            AppLocalizations.of(context)!.translate('English')),
+                      ),
+                      DropdownMenuItem(
+                        value: 'it',
+                        child: Text('Italien'),
+                      ),
+                    ],
+                    onChanged: (value) {
+                      if (value != null) {
+                        settingsProvider.updateSettings(
+                          Settings(
+                            language: value,
+                            theme: settingsProvider.settings.theme,
+                          ),
+                        );
+                      }
+                    },
                   ),
-                  DropdownMenuItem(
-                    value: 'it',
-                    child: Text('Italien'),
+                  SwitchListTile(
+                    title: Text(
+                        AppLocalizations.of(context)!.translate('dark_theme')),
+                    value: settingsProvider.settings.theme == 'dark',
+                    onChanged: (value) {
+                      settingsProvider.updateSettings(
+                        Settings(
+                          language: settingsProvider.settings.language,
+                          theme: value ? 'dark' : 'light',
+                        ),
+                      );
+                    },
                   ),
                 ],
-                onChanged: (value) {
-                  if (value != null) {
-                    settingsProvider.updateSettings(
-                      Settings(
-                        language: value,
-                        theme: settingsProvider.settings.theme,
-                      ),
-                    );
-                  }
-                },
               ),
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.translate('dark_theme')),
-                value: settingsProvider.settings.theme == 'dark',
-                onChanged: (value) {
-                  settingsProvider.updateSettings(
-                    Settings(
-                      language: settingsProvider.settings.language,
-                      theme: value ? 'dark' : 'light',
-                    ),
-                  );
-                },
-              ),
-            ],),
-
               ListTile(
-                title: Text(AppLocalizations.of(context)!.translate('AboutApp')),
+                title:
+                    Text(AppLocalizations.of(context)!.translate('AboutApp')),
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.push(context,
@@ -212,19 +211,16 @@ class _HomeViewState extends State<MyHomePage> {
         ),
         body: SafeArea(
             child: SingleChildScrollView(
-                // to avoid the keyboard overfllowing error
                 child: Padding(
           padding: const EdgeInsets.all(9.0),
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.end, // Align to the end
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(
-                      width: 12), // Add spacing between TextField and button
+                  SizedBox(width: 12),
                   IconButton(
-                    // Use IconButton for a smaller button
-                    icon: Icon(Icons.search, size: 30), // Adjust icon size
+                    icon: Icon(Icons.search, size: 30),
                     onPressed: _openSearchDialog,
                   ),
                 ],
@@ -233,24 +229,18 @@ class _HomeViewState extends State<MyHomePage> {
               if (weatherData == null)
                 Column(
                   children: [
-                    //  Row
-                    //  Lottie.asset('assets/noData.json'),
                     SizedBox(
                       height: 300,
                       width: 300,
                       child: Lottie.asset('assets/animations/noData.json'),
                     ),
-                      Text(AppLocalizations.of(context)!.translate('EnterCityNameGetWeather')),
-
-                    //Text(t.EnterCityName)
-                    //)
+                    Text(AppLocalizations.of(context)!
+                        .translate('EnterCityNameGetWeather')),
                   ],
                 )
               else if (weatherData!.containsKey('error'))
                 Column(
                   children: [
-                    //  Row
-                    //  Lottie.asset('assets/noData.json'),
                     SizedBox(
                       height: 300,
                       width: 300,
@@ -268,11 +258,9 @@ class _HomeViewState extends State<MyHomePage> {
                 Column(
                   children: [
                     Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center, // Center horizontally
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Center(
-                          // Center vertically within the row
                           child: Row(
                             children: [
                               Text(
@@ -312,8 +300,8 @@ class _HomeViewState extends State<MyHomePage> {
                         }
                       },
                       child: Text(
-                        // t.MoreDetails,
-    (AppLocalizations.of(context)!.translate('MoreDetails')),
+                        (AppLocalizations.of(context)!
+                            .translate('MoreDetails')),
                         style: const TextStyle(fontSize: 25.0),
                       ),
                     ),

@@ -6,9 +6,9 @@ import 'package:weather_app_programazione_exam_1/services/settings_provider.dart
 import 'package:weather_app_programazione_exam_1/services/localization_service.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensures proper initialization of Flutter
+  WidgetsFlutterBinding.ensureInitialized();
   final settingsProvider = SettingsProvider();
-  await settingsProvider.loadSettings(); // Load the settings (e.g., language and theme)
+  await settingsProvider.loadSettings();
 
   runApp(
     ChangeNotifierProvider(
