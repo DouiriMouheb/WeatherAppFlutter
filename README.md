@@ -14,8 +14,10 @@ Main Features are City-Specific Weather Updates, Dark/Light Theme Support and bo
 and Italian language support 
 ----------------------------------------------------------------------------------------------------
 D. User experience overview:
+
 ( you can find screenshots in the README screenshots folder )
--- Searching for Weather in a City:
+
+- Searching for Weather in a City:
 At the top-right of the app's main screen, there is a search icon when clicked a search bar pops up,
 Users simply type the name of a city into the search bar and press the "Search" button
 The app instantly fetches and displays the current weather conditions 
@@ -33,7 +35,8 @@ The app refreshes and displays all text in the chosen language.
 
 -- Viewing Additional Weather Details:
 The main weather display includes a "More Info" button.
-By clicking this, users can view additional details, such as wind speed, sunrise/sunset times ...
+By clicking this, users can view additional details, such as wind speed, sunrise/sunset times
+
 ----------------------------------------------------------------------------------------------------
 
 E. Technology:
@@ -56,5 +59,6 @@ Provides elegant loading animations while fetching weather data, enhancing user 
 (openweathermap's Free API)
 -- fluttertoast ^8.2.1: Displays toast messages for actions like errors
 (e.g., invalid city name or failed network requests).
+
 ----------------------------------------------------------------------------------------------------
 

@@ -5,15 +5,7 @@ import 'package:http/http.dart' as http;
 class WeatherService {
   static const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
   final String apiKey = "1b6e560dcc6db8097fcea91e7cedff01";
-  Future<Weather> getWeather(String cityName) async {
-    final res = await http
-        .get(Uri.parse('$BASE_URL?q=$cityName&appid=$apiKey&units=metric'));
-    if (res.statusCode == 200) {
-      return Weather.fromJson(jsonDecode(res.body));
-    } else {
-      throw Exception('Failed to load weather data');
-    }
-  }
+
 
   Future<Map<String, dynamic>?> fetchWeather(String cityName) async {
     final url =
